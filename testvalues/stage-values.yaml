@@ -1,0 +1,131 @@
+apiServer:
+  generated_certs: false
+env:
+  namespace: stage
+  nodeSelector: {}
+pgcluster_creation: true
+pgcluster:
+- name: pg-secure
+  tls:
+    enabled: true
+    custom_config: ''
+  namespace: stage
+  labels:
+    archive: false
+    archive_timeout: 600
+    autofail: true
+    autofail_replace_replica: true
+    crunchy_pgbadger: false
+    crunchy_collect: false
+    crunchy_pgpool: true
+    current-primary: pg-secure
+    deployment-name: pg-secure
+    name: pg-secure
+    pg_cluster: pg-secure
+    pgo_backrest: false
+    pgo_version: 3.5.2
+    primary: true
+    nodelabelkey: 
+    nodelabelvalue: 
+  spec:
+    ccpimagetag: centos7-11.2-2.3.1
+    cppimage: crunchy-postgres
+    port: 5432
+    primarysecretname: pg-secure-primaryuser-secret
+    replicas: 1
+    rootsecretname: pg-secure-postgres-secret
+    strategy: 1
+    user: testuser
+    usersecretname: pg-secure-testuser-secret
+    ContainerResources:
+      limitscpu: ''
+      limitsmemory: ''
+      requestscpu: ''
+      requestsmemory: ''
+    PrimaryStorage:
+      accessmode: ReadWriteOnce
+      fsgroup: '0'
+      matchLabels: ''
+      name: pg-secure
+      size: 100Gi
+      storageclass: ''
+      storagetype: create
+      supplementalgroups: ''
+    ReplicaStorage:
+      accessmode: ReadWriteOnce
+      fsgroup: '0'
+      matchLabels: ''
+      name: ''
+      size: 100Gi
+      storageclass: ''
+      storagetype: create
+      supplementalgroups: ''
+  secret:
+    primaryuser:
+      password: "T0p4EcRetDta2"
+    postgres:
+      password: "T0p4EcRetDta"
+    testuser:
+      password: "T0p4EcRetDta24"
+- name: pg-database
+  tls:
+    enabled: true
+    custom_config: ''
+  namespace: stage
+  labels:
+    archive: false
+    archive_timeout: 600
+    autofail: true
+    autofail_replace_replica: true
+    crunchy_pgbadger: false
+    crunchy_collect: false
+    crunchy_pgpool: true
+    current-primary: pg-database
+    deployment-name: pg-database
+    name: pg-database
+    pg_cluster: pg-database
+    pgo_backrest: false
+    pgo_version: 3.5.2
+    primary: true
+    nodelabelkey: 
+    nodelabelvalue: 
+  spec:
+    ccpimagetag: centos7-11.2-2.3.1
+    cppimage: crunchy-postgres
+    port: 5432
+    primarysecretname: pg-database-primaryuser-secret
+    replicas: 1
+    rootsecretname: pg-database-postgres-secret
+    strategy: 1
+    user: testuser
+    usersecretname: pg-database-testuser-secret
+    ContainerResources:
+      limitscpu: ''
+      limitsmemory: ''
+      requestscpu: ''
+      requestsmemory: ''
+    PrimaryStorage:
+      accessmode: ReadWriteOnce
+      fsgroup: '0'
+      matchLabels: ''
+      name: pg-database
+      size: 100Gi
+      storageclass: ''
+      storagetype: create
+      supplementalgroups: ''
+    ReplicaStorage:
+      accessmode: ReadWriteOnce
+      fsgroup: '0'
+      matchLabels: ''
+      name: ''
+      size: 100Gi
+      storageclass: ''
+      storagetype: create
+      supplementalgroups: ''
+  secret:
+    primaryuser:
+      password: "T0p4EcRetDta2"
+    postgres:
+      password: "T0p4EcRetDta"
+    testuser:
+      password: "T0p4EcRetDta24"

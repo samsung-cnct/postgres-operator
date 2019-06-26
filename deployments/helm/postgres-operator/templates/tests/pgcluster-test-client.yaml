@@ -1,0 +1,24 @@
+{{- if .Values.pgcluster_creation }}
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ (index .Values.pgcluster 0).labels.name | trunc 52 }}-pgcluster-test"
+  annotations:
+    "helm.sh/hook": test-success
+spec:
+  containers:
+  - name: "{{ (index .Values.pgcluster 0).labels.name | trunc 52 }}-pgcluster-test"
+    image: "postgres"
+    imagePullPolicy: "{{ .Values.image.pullPolicy }}"
+    command:
+      - "/usr/bin/pg_isready"
+      - "--dbname"
+      - "postgres"
+      - "--host"
+      - '{{ (index .Values.pgcluster 0).labels.name | trunc 52 }}'
+      - "--port"
+      - "{{ (index .Values.pgcluster 0).labels.port }}"
+      - "--username"
+      - "primaryuser"
+  restartPolicy: Never
+{{- end}}

@@ -1,0 +1,3 @@
+apiServer:
+  generated_certs: true
+pgcluster_creation: false

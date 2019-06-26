@@ -1,0 +1,144 @@
+config:
+  projectName: postgres-operator
+  projectTimeout: 3600
+  projectVersionCheck: true
+
+stages:  
+  - name: "test chart"
+    steps:
+      - name: "decrypt secrets"
+        actions: 
+          - executor: "harbor.cnct.team/estore/pipeline-step-sops:latest"
+            commands: 
+              - KUBESECRETS="secrets/pullsecret.yaml secrets/test-pgo-apiserver.yaml" make sops-raw-all
+      - name: "create kubernetes secrets"
+        actions: 
+          - executor: "harbor.cnct.team/estore/pipeline-step-helm:latest"
+            commands: 
+              - KUBESECRETS="secrets/pullsecret.yaml secrets/test-pgo-apiserver.yaml" make kubectl-create-all
+      - name: "inject version information"
+        actions:
+          - executor: "harbor.cnct.team/estore/pipeline-step-valueparse:latest"
+            commands: 
+              - >-
+                HELMCHART="postgres-operator"
+                make valinject-version            
+      - name: "install chart"
+        credentials:
+          - id: chart-creds
+            type: userpass
+        actions:
+          - executor: "harbor.cnct.team/estore/pipeline-step-helm:latest"
+            commands: 
+              - make helm-init
+              - >- 
+                HELMCHART="postgres-operator"
+                HELMVALUES="testvalues/pull-secret.yaml testvalues/test-values.yaml testvalues/ignore-crds.yaml"
+                make helm-install-source
+      - name: "test chart"
+        actions: 
+          - executor: "harbor.cnct.team/estore/pipeline-step-helm:latest"
+            commands: 
+              - make helm-test 
+    cleanup:
+      - name: "delete release and namespace"
+        actions: 
+          - executor: "harbor.cnct.team/estore/pipeline-step-helm:latest"
+            commands: 
+              - make helm-clean
+    filters:
+      - action: pullrequest
+        regional: false
+  - name: "publish chart"
+    steps:
+      - name: "inject version information"
+        actions:
+          - executor: "harbor.cnct.team/estore/pipeline-step-valueparse:latest"
+            commands: 
+              - >-
+                HELMCHART="postgres-operator"
+                make valinject-version
+      - name: "helm login"
+        credentials:
+          - id: chart-creds
+            type: userpass
+        actions:
+          - executor: "harbor.cnct.team/estore/pipeline-step-helm:latest"
+            commands: 
+              - make helm-init
+      - name: "package chart"
+        actions:
+          - executor: "harbor.cnct.team/estore/pipeline-step-helm:latest"
+            commands: 
+              - HELMCHART="postgres-operator" make helm-package
+      - name: "push chart"
+        credentials:
+          - id: chart-creds
+            type: userpass
+        actions:
+          - executor: "harbor.cnct.team/estore/pipeline-step-helm:latest"
+            commands: 
+              - HELMCHART="postgres-operator" make helm-push
+      - name: "update source control"
+        credentials:
+          - id: scm-creds
+            type: netrc
+        actions:
+          - executor: "harbor.cnct.team/estore/pipeline-step-helm:latest"
+            commands: 
+              - make git-commit
+    filters:
+      - action: merge
+        regional: false
+  - name: "deploy to stage"
+    steps:
+      - name: "decrypt secrets"
+        actions: 
+          - executor: "harbor.cnct.team/estore/pipeline-step-sops:latest"
+            commands: 
+              - KUBESECRETS="secrets/pullsecret.yaml secrets/stage-pgo-apiserver.yaml" make sops-raw-all
+      - name: "create kubernetes secrets"
+        actions: 
+          - executor: "harbor.cnct.team/estore/pipeline-step-helm:latest"
+            commands: 
+              - >-
+                KUBESECRETS="secrets/pullsecret.yaml secrets/stage-pgo-apiserver.yaml"
+                KUBENAMESPACE=stage
+                make kubectl-create-all
+      - name: "install chart"
+        credentials:
+          - id: chart-creds
+            type: userpass
+        actions:
+          - executor: "harbor.cnct.team/estore/pipeline-step-helm:latest"
+            commands: 
+              - make helm-init
+              - >-
+                HELMCHART="postgres-operator"
+                HELMVALUES="testvalues/pull-secret.yaml testvalues/stage-values.yaml testvalues/ignore-crds.yaml"
+                KUBENAMESPACE=stage
+                HELMRELEASE=$PIPELINE_COMPONENT
+                make helm-install-repo          
+    filters:
+      - action: merge
+        regional: false
+  - name: "git tag"
+    steps:
+      - name: "push tag"
+        credentials:
+          - id: scm-creds
+            type: netrc
+        actions:
+          - executor: "harbor.cnct.team/estore/pipeline-step-helm:latest"
+            commands: 
+              - make git-tag
+    filters:
+      - action: merge
+        regional: false
+  - name: "trigger regional jobs"
+    triggers: 
+      - name: "all regions"
+        credentialPrefix: ci-creds
+    filters:
+      - action: tag
+        regional: false 

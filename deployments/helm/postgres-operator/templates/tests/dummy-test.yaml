@@ -1,0 +1,17 @@
+{{- if .Values.pgcluster_creation }}
+{{- else }}
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ .Release.Name | trunc 52 }}-dummy-test"
+  annotations:
+    "helm.sh/hook": test-success
+spec:
+  containers:
+  - name: "{{ .Release.Name | trunc 52 }}-dummy-test"
+    image: "postgres"
+    imagePullPolicy: "{{ .Values.image.pullPolicy }}"
+    command:
+      - "ls"
+  restartPolicy: Never
+{{- end}}

@@ -1,0 +1,528 @@
+apiVersion: v1
+data:
+    ca.crl: |
+        -----BEGIN X509 CRL-----
+        MIICyDCBsQIBATANBgkqhkiG9w0BAQsFADBYMQswCQYDVQQGEwJVUzEUMBIGA1UE
+        CBMLS2luZyBDb3VudHkxEDAOBgNVBAcTB1NlYXR0bGUxEDAOBgNVBAoTB1NhbXN1
+        bmcxDzANBgNVBAMTBlJvb3RDQRcNMTkwNTIyMTYxNDAwWhcNMjExMTIyMTYxMzU2
+        WjAAoCMwITAfBgNVHSMEGDAWgBTiIz7xHSSZnBxA9ZsNgL9SvC4p0jANBgkqhkiG
+        9w0BAQsFAAOCAgEAtsMJGuo+GYI+CSkIQ/zNRFpWfIXcEb1djab7AoCg8NIZMcvw
+        zkGAVysFASIxzVE/fFzZAVrE4BRHVqmGjCwD4R0rc3HfbjSQ/I9+T9FWTguUtcNG
+        ZuqU4MaTeo7ekl7yxPmDE23jjvcxNP3U4EpU0Zt3r/mbYQQWHdHpR9YMpBNWszGG
+        7szNkLNSj1+VTXKNUMb7Hn0+WO1iLqEyGaItocXUarGJfHfcT3d24DiH8z9NStHh
+        bQUytRtN3AuvbkMkOqrnH6ZmdhkCivnSSJSi/HanYvZdDkdmnNnw7yzg5FMGTBNE
+        h2l4zuRz5KLVb70hpxoCVGmUYtf4WWX2NzCSXG5+yqOFTWEeNIT/024QnP3kSGoa
+        KPkNv8t7uTyxPV74Jke9pmIyMi4VjtrfRru35QiPuhI9jn2LuXNeFHo8LdlzVutv
+        R2yh45xX7b4duvTgRitQL1W6Tyi43UurlvwOwl9+PqDoIg4KnZ34rG07DF85riai
+        QZgaKoagS+zfBF4EGcWRjj1p4B3hUAynqa4DGMqH5gKXvzYLbrAiS9ZaHMdqLwUD
+        mdut8k3OnPoXhcgzrvQuhKDMW/pt52diiP2zBzgiDlxaXlPnTno7ik76KiUB9Xux
+        xQLPxbuokJbvuB32/6czG105T3Zw+/fBMZpLaP3TCwEgOnbpBdqZ9Zks3Pc=
+        -----END X509 CRL-----
+    ca.crt: |
+        -----BEGIN CERTIFICATE-----
+        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
+        VgMaCA==
+        -----END CERTIFICATE-----
+    client.crt: |
+        -----BEGIN CERTIFICATE-----
+        MIIEdzCCAl+gAwIBAgIRAIhAGcpm5vS00k/Nu7eE71YwDQYJKoZIhvcNAQELBQAw
+        WDELMAkGA1UEBhMCVVMxFDASBgNVBAgTC0tpbmcgQ291bnR5MRAwDgYDVQQHEwdT
+        ZWF0dGxlMRAwDgYDVQQKEwdTYW1zdW5nMQ8wDQYDVQQDEwZSb290Q0EwHhcNMTkw
+        NTIyMTYxNDAxWhcNMjAwNTIyMTYxNDAxWjAjMSEwHwYDVQQDDBh0ZXN0dXNlcl9j
+        cnVuY2h5ZGF0YS5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCk
+        6zovTG+XKfZXnfyRk+w40r7mDGrpjNreaCuCmOHR5kelwx6CCIui97BLRZJJJMwt
+        RP65/TGVfP+uPM6f+j94Vtn1XYLwK6cttXbfnWfzRZ/hXVvmy9+dyijMwI9PLu/Z
+        ko04vm9B6m45qLvzjDDHdoRcew7ZqQvBP1t5lXidwbDOY2U5LiYANQGhnfhqI6/l
+        tN0JXJfB5fAelyEKfFwVirlvmXR+ZRj1nVZyB1Rtsb3gTksZdJTpoxB1Nd88luKc
+        iAektXrLru/gKY8dh6Cc14A8UeBOHi401KanJVqOXALk6l8rKhvbjnLh7eUDLWkR
+        L6lIcBY2neBH3HnU4qB5AgMBAAGjcTBvMA4GA1UdDwEB/wQEAwIDuDAdBgNVHSUE
+        FjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwHQYDVR0OBBYEFIh23TkgnoKT5EJzJ4Xx
+        ltJUK3RJMB8GA1UdIwQYMBaAFOIjPvEdJJmcHED1mw2Av1K8LinSMA0GCSqGSIb3
+        DQEBCwUAA4ICAQAX820g7l+Cx8pKTOIB1p3AU4TdNT5sG5+AeXyb4q/V2xry3uZn
+        APLRgCVs15bYGvwGL5/SjC94rZXDQRYW+xrfDaJhWItoqN8lJCa+3WCZtY5iL/OB
+        n3opXqQYHEmbIrxbD1ivwA74FL1wT8ZKvX86h8Gj61waBn/k5BT/mie4nksAZ8k0
+        YUnyGVPqwypZZa6XKSs8k144pPgOwgK6OM10tK4CJ4+c/T8Yzd14I0olqy5nZF6Z
+        ar7mVADuoaTRJ/63s3Tb4RUDnpzN9wj6VXzQeoNhPSunKenUsycaAmFs7aBZyrlQ
+        qH68Exfn9Ky/TsDHcPh3WaJ60uU7L9EOmFeEu2jyawXPylitZOuTAadfRSpVj14q
+        10d+NRFquvec42vlbruofuxdckID3G5oyHxT1FTiHIJXatqTip+tWr1h6SnTV3XU
+        G36Nn3Kuo2XTtWBZFC38Zf/hznglJbm8a7NJ4ECovhAoszHCtKu51io/dN4/qyAE
+        MU8RGHAnxABt2dVKU596v99FbwCgNT0j4mIPlruI9pKx1s3AUeMMXieXqsXqiOoQ
+        HwceFfDK0q+7rPMI3HmGdOwzcDCeazuGIAvGdq9Qd5ea7Ix6Snu4ZjH/7KVwqCNQ
+        taPbueAKEQjH6US48NmsPb0Od4ga7XVJtIwaDQFLzYNH0xYWWZaGmg7qqw==
+        -----END CERTIFICATE-----
+        -----BEGIN CERTIFICATE-----
+        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
+        VgMaCA==
+        -----END CERTIFICATE-----
+    client.key: |
+        -----BEGIN RSA PRIVATE KEY-----
+        MIIEpAIBAAKCAQEApOs6L0xvlyn2V538kZPsONK+5gxq6Yza3mgrgpjh0eZHpcMe
+        ggiLovewS0WSSSTMLUT+uf0xlXz/rjzOn/o/eFbZ9V2C8CunLbV2351n80Wf4V1b
+        5svfncoozMCPTy7v2ZKNOL5vQepuOai784wwx3aEXHsO2akLwT9beZV4ncGwzmNl
+        OS4mADUBoZ34aiOv5bTdCVyXweXwHpchCnxcFYq5b5l0fmUY9Z1WcgdUbbG94E5L
+        GXSU6aMQdTXfPJbinIgHpLV6y67v4CmPHYegnNeAPFHgTh4uNNSmpyVajlwC5Opf
+        Kyob245y4e3lAy1pES+pSHAWNp3gR9x51OKgeQIDAQABAoIBAQCLWC1rdXv8D3qT
+        gWu8XW4EfRzLJ8bV2yu7K+1HhYGYZqg3COwoFqxVYE7W6su1fZ/+yAMqhyJ0Go+2
+        Wq6DQWCLf2beCMrvvxKcbm0od8kzJar3MnjKQ4yHuB5NEo6D6zbBcTBdt5ot6bSE
+        h2t3VwaIIj2oHlnn0wuZlrzluEOXlospxPBr4FEu12h/XHdi7IKR7iTUjL2Q6Oxh
+        JorQII3k1AL1qMnAmfrb84dlkKTyzzyO8Cra8BYiPf6TjYJZ6e0e9jGM9y9k4rM8
+        hcQ1a+VxYAqFYEw519aksV8uSKli1WNYAmMqsmM97O6u1ajZriEiRS7hRB7ztruG
+        o18GTSJhAoGBANTm/xBh0yLmyz/FNNMltkpvRyEwxXvhrx8yVsV4axivO9k0mOsT
+        b1viiRXJ3r6JG9A8PZpCLbkxH0ghT7CbJftjF3m94We5W+2asV3GlGoSG8SyjOAI
+        EL+H7d3hJbiYY2fsJHzLijL4Qj99Wl9MGDqt4GaA3LG0rfZcXZGlTdt9AoGBAMZN
+        otgdgM5FMPOaIR+TDsEgqE4XGx3Yzj6jW/Uz3rIUZ9K7hpKaJQRYPTBG2eXY8/vV
+        QHBvmDhUUBxjHjb0c8iDei+9+aig+XVtZjb3EPj+RGbAx96GOI3vNL+7cwlFaTk0
+        ftvQHb3kOxCQPptFahqbwZzdCBaNsMi6mPudGhGtAoGAJD9n8cwV/H064ZKb2c8z
+        6BxmCdqZ5OuZu0AA0gIciclb8TEpT+yxKv24xULnb508ZQm8m0TlMACTCN7TCIiB
+        wPkwCAQyGkzOv/d0dzjWD/EhVS3pGkOFRnbIItywZWtckVb9J1ooH2FxNgoLluoH
+        vgXYjNsnuAHBFI7JR4DTbqkCgYEAnxUjIVqxvUg2mAY6sljICljHjDXvFAeclRV6
+        LQBak+PY0m6L68nrDkw3ciY0obZlLM8L7ecoZ3AEAHHniFCdHeuTtv8hbI0O8ow7
+        5rZXkFhyyTe4X6Svc/XFDFc1VuevHSwm5PJVGcQhOg1tnCSYlRYEwXF0DpvGiZFg
+        LuH+StUCgYBwwSikXkH3vSXowM0nYm2EwAqRYQ3se/1QCX7bftTrIoH+v3Oo+9Mc
+        aKBeRArQI4zEH+g6SmT+sQ4Lx7BsSqaocDXy3JU5L26OspNoNNHBKrpGVqpPcy0s
+        26tKMkXtuzP0Eiztv4LQvo0v7sD2MdUHTSL4DIPfRYvpWeYBHol13A==
+        -----END RSA PRIVATE KEY-----
+    pg_hba.conf: |-
+        # TYPE  DATABASE        USER            ADDRESS                 METHOD
+
+        # "local" is for Unix domain socket connections only
+        local   all             postgres                                 trust
+        local   all             testuser                                 trust
+        hostssl replication     primaryuser     0.0.0.0/0                md5
+        hostssl replication     primaryuser     127.0.0.1/32             md5
+        hostssl samerole        postgres        0.0.0.0/0                md5
+        hostssl samerole        postgres        127.0.0.1/32             md5
+        hostssl replication     stock           127.0.0.1/32             scram-sha-256
+
+        host all                all             0.0.0.0/0                md5
+        host all                all             127.0.0.1/32             md5
+        hostssl all             testuser        127.0.0.1/32             cert clientcert=1 map=ssl-testuser
+        hostssl all             testuser        0.0.0.0/0                cert clientcert=1 map=ssl-testuser
+    pg_ident.conf: |-
+        ssl-testuser    testuser_crunchydata.com      testuser
+        ssl-primaryuser primaryuser_crunchydata.com   primaryuser
+    postgresql.conf: "# -----------------------------\n# crunchy PostgreSQL configuration
+        file\n# -----------------------------\n#\n# This file consists of lines of
+        the form:\n#\n#   name = value\n#\n# (The \"=\" is optional.)  Whitespace
+        may be used.  Comments are introduced with\n# \"#\" anywhere on a line.  The
+        complete list of parameter names and allowed\n# values can be found in the
+        PostgreSQL documentation.\n#\n# The commented-out settings shown in this file
+        represent the default values.\n# Re-commenting a setting is NOT sufficient
+        to revert it to the default value;\n# you need to reload the server.\n#\n#
+        This file is read on server startup and when the server receives a SIGHUP\n#
+        signal.  If you edit the file on a running system, you have to SIGHUP the\n#
+        server for the changes to take effect, or use \"pg_ctl reload\".  Some\n#
+        parameters, which are marked below, require a server shutdown and restart
+        to\n# take effect.\n#\n# Any parameter can also be given as a command-line
+        option to the server, e.g.,\n# \"postgres -c log_connections=on\".  Some parameters
+        can be changed at run time\n# with the \"SET\" SQL command.\n#\n# Memory units:
+        \ kB = kilobytes        Time units:  ms  = milliseconds\n#                MB
+        = megabytes                     s   = seconds\n#                GB = gigabytes
+        \                    min = minutes\n#                TB = terabytes                     h
+        \  = hours\n#                                                   d   = days\n\n\n#------------------------------------------------------------------------------\n#
+        FILE LOCATIONS\n#------------------------------------------------------------------------------\n\n#
+        The default values of these variables are driven from the -D command-line\n#
+        option or PGDATA environment variable, represented here as ConfigDir.\n\n#data_directory
+        = 'ConfigDir'\t\t# use data in another directory\n\t\t\t\t\t# (change requires
+        restart)\n#hba_file = 'ConfigDir/pg_hba.conf'\t# host-based authentication
+        file\n\t\t\t\t\t# (change requires restart)\n#ident_file = 'ConfigDir/pg_ident.conf'\t#
+        ident configuration file\n\t\t\t\t\t# (change requires restart)\n\n# If external_pid_file
+        is not explicitly set, no extra PID file is written.\n#external_pid_file =
+        ''\t\t\t# write an extra PID file\n\t\t\t\t\t# (change requires restart)\n\n\n#------------------------------------------------------------------------------\n#
+        CONNECTIONS AND AUTHENTICATION\n#------------------------------------------------------------------------------\n\n#
+        - Connection Settings -\n\nlisten_addresses = '*'\t\t# what IP address(es)
+        to listen on;\n\t\t\t\t\t# comma-separated list of addresses;\n\t\t\t\t\t#
+        defaults to 'localhost'; use '*' for all\n\t\t\t\t\t# (change requires restart)\nport
+        = 5432\t\t\t\t# (change requires restart)\nmax_connections = 10\t\t\t# (change
+        requires restart)\n#superuser_reserved_connections = 3\t# (change requires
+        restart)\nunix_socket_directories = '/tmp' # comma-separated list of directories\n\t\t\t\t\t#
+        (change requires restart)\n#unix_socket_group = ''\t\t\t# (change requires
+        restart)\nunix_socket_permissions = 0777\t\t# begin with 0 to use octal notation\n\t\t\t\t\t#
+        (change requires restart)\n#bonjour = off\t\t\t\t# advertise server via Bonjour\n\t\t\t\t\t#
+        (change requires restart)\n#bonjour_name = ''\t\t\t# defaults to the computer
+        name\n\t\t\t\t\t# (change requires restart)\n\n# - Security and Authentication
+        -\n\n#authentication_timeout = 1min\t\t# 1s-600s\nssl = on\t\t\t\t# (change
+        requires restart)\n#ssl_ciphers = 'HIGH:MEDIUM:+3DES:!aNULL' # allowed SSL
+        ciphers\n\t\t\t\t\t# (change requires restart)\n#ssl_prefer_server_ciphers
+        = on\t\t# (change requires restart)\n#ssl_ecdh_curve = 'prime256v1'\t\t# (change
+        requires restart)\nssl_cert_file = 'server.crt'\t\t# (change requires restart)\nssl_key_file
+        = 'server.key'\t\t# (change requires restart)\nssl_ca_file = 'ca.crt'\t\t\t#
+        (change requires restart)\nssl_crl_file = 'ca.crl'\t\t\t# (change requires
+        restart)\npassword_encryption = on\n#db_user_namespace = off\nrow_security
+        = on\n\n# GSSAPI using Kerberos\n#krb_server_keyfile = ''\n#krb_caseins_users
+        = off\n\n# - TCP Keepalives -\n# see \"man 7 tcp\" for details\n\n#tcp_keepalives_idle
+        = 0\t\t# TCP_KEEPIDLE, in seconds;\n\t\t\t\t\t# 0 selects the system default\n#tcp_keepalives_interval
+        = 0\t\t# TCP_KEEPINTVL, in seconds;\n\t\t\t\t\t# 0 selects the system default\n#tcp_keepalives_count
+        = 0\t\t# TCP_KEEPCNT;\n\t\t\t\t\t# 0 selects the system default\n\n\n#------------------------------------------------------------------------------\n#
+        RESOURCE USAGE (except WAL)\n#------------------------------------------------------------------------------\n\n#
+        - Memory -\n\nshared_buffers = 128MB\t\t\t# min 128kB\n\t\t\t\t\t# (change
+        requires restart)\n#huge_pages = try\t\t\t# on, off, or try\n\t\t\t\t\t# (change
+        requires restart)\ntemp_buffers = 9MB\t\t\t# min 800kB\n#max_prepared_transactions
+        = 0\t\t# zero disables the feature\n\t\t\t\t\t# (change requires restart)\n#
+        Caution: it is not advisable to set max_prepared_transactions nonzero unless\n#
+        you actively intend to use prepared transactions.\nwork_mem = 5MB\t\t\t\t#
+        min 64kB\n#maintenance_work_mem = 64MB\t\t# min 1MB\n#replacement_sort_tuples
+        = 150000\t# limits use of replacement selection sort\n#autovacuum_work_mem
+        = -1\t\t# min 1MB, or -1 to use maintenance_work_mem\n#max_stack_depth = 2MB\t\t\t#
+        min 100kB\ndynamic_shared_memory_type = posix\t# the default is the first
+        option\n\t\t\t\t\t# supported by the operating system:\n\t\t\t\t\t#   posix\n\t\t\t\t\t#
+        \  sysv\n\t\t\t\t\t#   windows\n\t\t\t\t\t#   mmap\n\t\t\t\t\t# use none to
+        disable dynamic shared memory\n\n# - Disk -\n\n#temp_file_limit = -1\t\t\t#
+        limits per-process temp file space\n\t\t\t\t\t# in kB, or -1 for no limit\n\n#
+        - Kernel Resource Usage -\n\n#max_files_per_process = 1000\t\t# min 25\n\t\t\t\t\t#
+        (change requires restart)\nshared_preload_libraries = 'pgaudit.so,pg_stat_statements.so'\t\t#
+        (change requires restart)\n\n# - Cost-Based Vacuum Delay -\n\n#vacuum_cost_delay
+        = 0\t\t\t# 0-100 milliseconds\n#vacuum_cost_page_hit = 1\t\t# 0-10000 credits\n#vacuum_cost_page_miss
+        = 10\t\t# 0-10000 credits\n#vacuum_cost_page_dirty = 20\t\t# 0-10000 credits\n#vacuum_cost_limit
+        = 200\t\t# 1-10000 credits\n\n# - Background Writer -\n\n#bgwriter_delay =
+        200ms\t\t\t# 10-10000ms between rounds\n#bgwriter_lru_maxpages = 100\t\t#
+        0-1000 max buffers written/round\n#bgwriter_lru_multiplier = 2.0\t\t# 0-10.0
+        multiplier on buffers scanned/round\n#bgwriter_flush_after = 512kB\t\t# measured
+        in pages, 0 disables\n\n# - Asynchronous Behavior -\n\n#effective_io_concurrency
+        = 1\t\t# 1-1000; 0 disables prefetching\n#max_worker_processes = 8\t\t# (change
+        requires restart)\n#max_parallel_workers_per_gather = 0\t# taken from max_worker_processes\n#old_snapshot_threshold
+        = -1\t\t# 1min-60d; -1 disables; 0 is immediate\n\t\t\t\t\t# (change requires
+        restart)\n#backend_flush_after = 0\t\t# measured in pages, 0 disables\n\n\n#------------------------------------------------------------------------------\n#
+        WRITE AHEAD LOG\n#------------------------------------------------------------------------------\n\n#
+        - Settings -\n\nwal_level = hot_standby\t\t\t# minimal, replica, or logical\n\t\t\t\t\t#
+        (change requires restart)\n#fsync = on\t\t\t\t# flush data to disk for crash
+        safety\n\t\t\t\t\t\t# (turning this off can cause\n\t\t\t\t\t\t# unrecoverable
+        data corruption)\n#synchronous_commit = on\t\t# synchronization level;\n\t\t\t\t\t#
+        off, local, remote_write, remote_apply, or on\n#wal_sync_method = fsync\t\t#
+        the default is the first option\n\t\t\t\t\t# supported by the operating system:\n\t\t\t\t\t#
+        \  open_datasync\n\t\t\t\t\t#   fdatasync (default on Linux)\n\t\t\t\t\t#
+        \  fsync\n\t\t\t\t\t#   fsync_writethrough\n\t\t\t\t\t#   open_sync\n#full_page_writes
+        = on\t\t\t# recover from partial page writes\n#wal_compression = off\t\t\t#
+        enable compression of full-page writes\n#wal_log_hints = off\t\t\t# also do
+        full page writes of non-critical updates\n\t\t\t\t\t# (change requires restart)\n#wal_buffers
+        = -1\t\t\t# min 32kB, -1 sets based on shared_buffers\n\t\t\t\t\t# (change
+        requires restart)\n#wal_writer_delay = 200ms\t\t# 1-10000 milliseconds\n#wal_writer_flush_after
+        = 1MB\t\t# measured in pages, 0 disables\n\n#commit_delay = 0\t\t\t# range
+        0-100000, in microseconds\n#commit_siblings = 5\t\t\t# range 1-1000\n\n# -
+        Checkpoints -\n\n#checkpoint_timeout = 5min\t\t# range 30s-1d\n#max_wal_size
+        = 1GB\n#min_wal_size = 80MB\n#checkpoint_completion_target = 0.5\t# checkpoint
+        target duration, 0.0 - 1.0\n#checkpoint_flush_after = 256kB\t\t# measured
+        in pages, 0 disables\n#checkpoint_warning = 30s\t\t# 0 disables\n\n# - Archiving
+        -\n\narchive_mode = on\t\t# enables archiving; off, on, or always\n\t\t\t\t#
+        (change requires restart)\narchive_command = 'pgbackrest archive-push %p'\t\t#
+        command to use to archive a logfile segment\n\t\t\t\t# placeholders: %p =
+        path of file to archive\n\t\t\t\t#               %f = file name only\n\t\t\t\t#
+        e.g. 'test ! -f /mnt/server/archivedir/%f && cp %p /mnt/server/archivedir/%f'\narchive_timeout
+        = 60\t\t# force a logfile segment switch after this\n\t\t\t\t# number of seconds;
+        0 disables\n\n\n#------------------------------------------------------------------------------\n#
+        REPLICATION\n#------------------------------------------------------------------------------\n\n#
+        - Sending Server(s) -\n\n# Set these on the master and on any standby that
+        will send replication data.\n\nmax_wal_senders = 5\t\t# max number of walsender
+        processes\n\t\t\t\t# (change requires restart)\nwal_keep_segments = 400\t\t#
+        in logfile segments, 16MB each; 0 disables\n#wal_sender_timeout = 60s\t# in
+        milliseconds; 0 disables\n\n#max_replication_slots = 0\t# max number of replication
+        slots\n\t\t\t\t# (change requires restart)\n#track_commit_timestamp = off\t#
+        collect timestamp of transaction commit\n\t\t\t\t# (change requires restart)\n\n#
+        - Master Server -\n\n# These settings are ignored on a standby server.\n\n#synchronous_standby_names
+        = ''\t# standby servers that provide sync rep\n\t\t\t\t# number of sync standbys
+        and comma-separated list of application_name\n\t\t\t\t# from standby(s); '*'
+        = all\n#vacuum_defer_cleanup_age = 0\t# number of xacts by which cleanup is
+        delayed\n\n# - Standby Servers -\n\n# These settings are ignored on a master
+        server.\n\nhot_standby = on\t\t\t# \"on\" allows queries during recovery\n\t\t\t\t\t#
+        (change requires restart)\nmax_standby_archive_delay = 30s\t# max delay before
+        canceling queries\n\t\t\t\t\t# when reading WAL from archive;\n\t\t\t\t\t#
+        -1 allows indefinite delay\nmax_standby_streaming_delay = 30s\t# max delay
+        before canceling queries\n\t\t\t\t\t# when reading streaming WAL;\n\t\t\t\t\t#
+        -1 allows indefinite delay\nwal_receiver_status_interval = 10s\t# send replies
+        at least this often\n\t\t\t\t\t# 0 disables\n#hot_standby_feedback = off\t\t#
+        send info from standby to prevent\n\t\t\t\t\t# query conflicts\n#wal_receiver_timeout
+        = 60s\t\t# time that receiver waits for\n\t\t\t\t\t# communication from master\n\t\t\t\t\t#
+        in milliseconds; 0 disables\n#wal_retrieve_retry_interval = 5s\t# time to
+        wait before retrying to\n\t\t\t\t\t# retrieve WAL after a failed attempt\n\n\n#------------------------------------------------------------------------------\n#
+        QUERY TUNING\n#------------------------------------------------------------------------------\n\n#
+        - Planner Method Configuration -\n\n#enable_bitmapscan = on\n#enable_hashagg
+        = on\n#enable_hashjoin = on\n#enable_indexscan = on\n#enable_indexonlyscan
+        = on\n#enable_material = on\n#enable_mergejoin = on\n#enable_nestloop = on\n#enable_seqscan
+        = on\n#enable_sort = on\n#enable_tidscan = on\n\n# - Planner Cost Constants
+        -\n\n#seq_page_cost = 1.0\t\t\t# measured on an arbitrary scale\n#random_page_cost
+        = 4.0\t\t\t# same scale as above\n#cpu_tuple_cost = 0.01\t\t\t# same scale
+        as above\n#cpu_index_tuple_cost = 0.005\t\t# same scale as above\n#cpu_operator_cost
+        = 0.0025\t\t# same scale as above\n#parallel_tuple_cost = 0.1\t\t# same scale
+        as above\n#parallel_setup_cost = 1000.0\t# same scale as above\n#min_parallel_relation_size
+        = 8MB\n#effective_cache_size = 4GB\n\n# - Genetic Query Optimizer -\n\n#geqo
+        = on\n#geqo_threshold = 12\n#geqo_effort = 5\t\t\t# range 1-10\n#geqo_pool_size
+        = 0\t\t\t# selects default based on effort\n#geqo_generations = 0\t\t\t# selects
+        default based on effort\n#geqo_selection_bias = 2.0\t\t# range 1.5-2.0\n#geqo_seed
+        = 0.0\t\t\t# range 0.0-1.0\n\n# - Other Planner Options -\n\n#default_statistics_target
+        = 100\t# range 1-10000\n#constraint_exclusion = partition\t# on, off, or partition\n#cursor_tuple_fraction
+        = 0.1\t\t# range 0.0-1.0\n#from_collapse_limit = 8\n#join_collapse_limit =
+        8\t\t# 1 disables collapsing of explicit\n\t\t\t\t\t# JOIN clauses\n#force_parallel_mode
+        = off\n\n\n#------------------------------------------------------------------------------\n#
+        ERROR REPORTING AND LOGGING\n#------------------------------------------------------------------------------\n\n#
+        - Where to Log -\n\nlog_destination = 'stderr'\t\t# Valid values are combinations
+        of\n\t\t\t\t\t# stderr, csvlog, syslog, and eventlog,\n\t\t\t\t\t# depending
+        on platform.  csvlog\n\t\t\t\t\t# requires logging_collector to be on.\n\n#
+        This is used when logging to stderr:\nlogging_collector = on\t\t\t# Enable
+        capturing of stderr and csvlog\n\t\t\t\t\t# into log files. Required to be
+        on for\n\t\t\t\t\t# csvlogs.\n\t\t\t\t\t# (change requires restart)\n\n# These
+        are only used if logging_collector is on:\nlog_directory = 'pg_log'\t\t# directory
+        where log files are written,\n\t\t\t\t\t# can be absolute or relative to PGDATA\nlog_filename
+        = 'postgresql-%a.log'\t# log file name pattern,\n\t\t\t\t\t# can include strftime()
+        escapes\nlog_file_mode = 0600\t\t\t# creation mode for log files,\n\t\t\t\t\t#
+        begin with 0 to use octal notation\nlog_truncate_on_rotation = on\t\t# If
+        on, an existing log file with the\n\t\t\t\t\t# same name as the new log file
+        will be\n\t\t\t\t\t# truncated rather than appended to.\n\t\t\t\t\t# But such
+        truncation only occurs on\n\t\t\t\t\t# time-driven rotation, not on restarts\n\t\t\t\t\t#
+        or size-driven rotation.  Default is\n\t\t\t\t\t# off, meaning append to existing
+        files\n\t\t\t\t\t# in all cases.\nlog_rotation_age = 1d\t\t\t# Automatic rotation
+        of logfiles will\n\t\t\t\t\t# happen after that time.  0 disables.\nlog_rotation_size
+        = 0\t\t\t# Automatic rotation of logfiles will\n\t\t\t\t\t# happen after that
+        much log output.\n\t\t\t\t\t# 0 disables.\n\n# These are relevant when logging
+        to syslog:\nsyslog_facility = 'LOCAL0'\nsyslog_ident = 'postgres'\n#syslog_sequence_numbers
+        = on\n#syslog_split_messages = on\n\n# This is only relevant when logging
+        to eventlog (win32):\n#event_source = 'PostgreSQL'\n\n# - When to Log -\n\nclient_min_messages
+        = error\n# values in order of decreasing detail:\n\t\t\t\t\t#   debug5\n\t\t\t\t\t#
+        \  debug4\n\t\t\t\t\t#   debug3\n\t\t\t\t\t#   debug2\n\t\t\t\t\t#   debug1\n\t\t\t\t\t#
+        \  log\n\t\t\t\t\t#   notice\n\t\t\t\t\t#   warning\n\t\t\t\t\t#   error\n\n#log_min_messages
+        = warning\t\t# values in order of decreasing detail:\n\t\t\t\t\t#   debug5\n\t\t\t\t\t#
+        \  debug4\n\t\t\t\t\t#   debug3\n\t\t\t\t\t#   debug2\n\t\t\t\t\t#   debug1\n\t\t\t\t\t#
+        \  info\n\t\t\t\t\t#   notice\n\t\t\t\t\t#   warning\n\t\t\t\t\t#   error\n\t\t\t\t\t#
+        \  log\n\t\t\t\t\t#   fatal\n\t\t\t\t\t#   panic\n\n#log_min_error_statement
+        = error\t# values in order of decreasing detail:\n\t\t\t\t\t#   debug5\n\t\t\t\t\t#
+        \  debug4\n\t\t\t\t\t#   debug3\n\t\t\t\t\t#   debug2\n\t\t\t\t\t#   debug1\n\t\t\t\t\t#
+        \  info\n\t\t\t\t\t#   notice\n\t\t\t\t\t#   warning\n\t\t\t\t\t#   error\n\t\t\t\t\t#
+        \  log\n\t\t\t\t\t#   fatal\n\t\t\t\t\t#   panic (effectively off)\n\nlog_min_duration_statement
+        = 0\t# -1 is disabled, 0 logs all statements\n\t\t\t\t\t# and their durations,
+        > 0 logs only\n\t\t\t\t\t# statements running at least this number\n\t\t\t\t\t#
+        of milliseconds\n\n\n# - What to Log -\n\n#debug_print_parse = off\n#debug_print_rewritten
+        = off\n#debug_print_plan = off\n#debug_pretty_print = on\nlog_checkpoints
+        = on\nlog_connections = on\nlog_disconnections = on\n#log_duration = off\n#log_error_verbosity
+        = default\t\t# terse, default, or verbose messages\nlog_hostname = on\nlog_line_prefix
+        = '%m [%p]: [%l-1] user=%u,db=%d,app=%a,client=%r,session-start=%s,session-id=%c'\t\t\t#
+        special values:\n\t\t\t\t\t#   %a = application name\n\t\t\t\t\t#   %u = user
+        name\n\t\t\t\t\t#   %d = database name\n\t\t\t\t\t#   %r = remote host and
+        port\n\t\t\t\t\t#   %h = remote host\n\t\t\t\t\t#   %p = process ID\n\t\t\t\t\t#
+        \  %t = timestamp without milliseconds\n\t\t\t\t\t#   %m = timestamp with
+        milliseconds\n\t\t\t\t\t#   %n = timestamp with milliseconds (as a Unix epoch)\n\t\t\t\t\t#
+        \  %i = command tag\n\t\t\t\t\t#   %e = SQL state\n\t\t\t\t\t#   %c = session
+        ID\n\t\t\t\t\t#   %l = session line number\n\t\t\t\t\t#   %s = session start
+        timestamp\n\t\t\t\t\t#   %v = virtual transaction ID\n\t\t\t\t\t#   %x = transaction
+        ID (0 if none)\n\t\t\t\t\t#   %q = stop here in non-session\n\t\t\t\t\t#        processes\n\t\t\t\t\t#
+        \  %% = '%'\n\t\t\t\t\t# e.g. '<%u%%%d> '\nlog_lock_waits = on\t\t\t# log
+        lock waits >= deadlock_timeout\n#log_statement = 'none'\t\t\t# none, ddl,
+        mod, all\n#log_replication_commands = off\n#log_temp_files = -1\t\t\t# log
+        temporary files equal or larger\n\t\t\t\t\t# than the specified size in kilobytes;\n\t\t\t\t\t#
+        -1 disables, 0 logs all temp files\nlog_timezone = 'UTC'\n\n\n# - Process
+        Title -\n\n#cluster_name = ''\t\t\t# added to process titles if nonempty\n\t\t\t\t\t#
+        (change requires restart)\n#update_process_title = on\n\n\n#------------------------------------------------------------------------------\n#
+        RUNTIME STATISTICS\n#------------------------------------------------------------------------------\n\n#
+        - Query/Index Statistics Collector -\n\n#track_activities = on\n#track_counts
+        = on\n#track_io_timing = off\n#track_functions = none\t\t\t# none, pl, all\n#track_activity_query_size
+        = 1024\t# (change requires restart)\n#stats_temp_directory = 'pg_stat_tmp'\n\n\n#
+        - Statistics Monitoring -\n\n#log_parser_stats = off\n#log_planner_stats =
+        off\n#log_executor_stats = off\n#log_statement_stats = off\n\n\n#------------------------------------------------------------------------------\n#
+        AUTOVACUUM PARAMETERS\n#------------------------------------------------------------------------------\n\n#autovacuum
+        = on\t\t\t# Enable autovacuum subprocess?  'on'\n\t\t\t\t\t# requires track_counts
+        to also be on.\nlog_autovacuum_min_duration = 0\t# -1 disables, 0 logs all
+        actions and\n\t\t\t\t\t# their durations, > 0 logs only\n\t\t\t\t\t# actions
+        running at least this number\n\t\t\t\t\t# of milliseconds.\n#autovacuum_max_workers
+        = 3\t\t# max number of autovacuum subprocesses\n\t\t\t\t\t# (change requires
+        restart)\n#autovacuum_naptime = 1min\t\t# time between autovacuum runs\n#autovacuum_vacuum_threshold
+        = 50\t# min number of row updates before\n\t\t\t\t\t# vacuum\n#autovacuum_analyze_threshold
+        = 50\t# min number of row updates before\n\t\t\t\t\t# analyze\n#autovacuum_vacuum_scale_factor
+        = 0.2\t# fraction of table size before vacuum\n#autovacuum_analyze_scale_factor
+        = 0.1\t# fraction of table size before analyze\n#autovacuum_freeze_max_age
+        = 200000000\t# maximum XID age before forced vacuum\n\t\t\t\t\t# (change requires
+        restart)\n#autovacuum_multixact_freeze_max_age = 400000000\t# maximum multixact
+        age\n\t\t\t\t\t# before forced vacuum\n\t\t\t\t\t# (change requires restart)\n#autovacuum_vacuum_cost_delay
+        = 20ms\t# default vacuum cost delay for\n\t\t\t\t\t# autovacuum, in milliseconds;\n\t\t\t\t\t#
+        -1 means use vacuum_cost_delay\n#autovacuum_vacuum_cost_limit = -1\t# default
+        vacuum cost limit for\n\t\t\t\t\t# autovacuum, -1 means use\n\t\t\t\t\t# vacuum_cost_limit\n\n\n#------------------------------------------------------------------------------\n#
+        CLIENT CONNECTION DEFAULTS\n#------------------------------------------------------------------------------\n\n#
+        - Statement Behavior -\n\n#search_path = '\"$user\", public'\t# schema names\n#default_tablespace
+        = ''\t\t# a tablespace name, '' uses the default\n#temp_tablespaces = ''\t\t\t#
+        a list of tablespace names, '' uses\n\t\t\t\t\t# only default tablespace\n#check_function_bodies
+        = on\n#default_transaction_isolation = 'read committed'\n#default_transaction_read_only
+        = off\n#default_transaction_deferrable = off\n#session_replication_role =
+        'origin'\nstatement_timeout = 60000 \t\t# in milliseconds, 0 is disabled\n#lock_timeout
+        = 0\t\t\t# in milliseconds, 0 is disabled\n#idle_in_transaction_session_timeout
+        = 0\t\t# in milliseconds, 0 is disabled\n#vacuum_freeze_min_age = 50000000\n#vacuum_freeze_table_age
+        = 150000000\n#vacuum_multixact_freeze_min_age = 5000000\n#vacuum_multixact_freeze_table_age
+        = 150000000\n#bytea_output = 'hex'\t\t\t# hex, escape\n#xmlbinary = 'base64'\n#xmloption
+        = 'content'\n#gin_fuzzy_search_limit = 0\n#gin_pending_list_limit = 4MB\n\n#
+        - Locale and Formatting -\n\ndatestyle = 'iso, mdy'\n#intervalstyle = 'postgres'\ntimezone
+        = 'UTC'\n#timezone_abbreviations = 'Default'     # Select the set of available
+        time zone\n\t\t\t\t\t# abbreviations.  Currently, there are\n\t\t\t\t\t#   Default\n\t\t\t\t\t#
+        \  Australia (historical usage)\n\t\t\t\t\t#   India\n\t\t\t\t\t# You can
+        create your own file in\n\t\t\t\t\t# share/timezonesets/.\n#extra_float_digits
+        = 0\t\t\t# min -15, max 3\n#client_encoding = sql_ascii\t\t# actually, defaults
+        to database\n\t\t\t\t\t# encoding\n\n# These settings are initialized by initdb,
+        but they can be changed.\nlc_messages = 'C'\t\t\t# locale for system error
+        message\n\t\t\t\t\t# strings\nlc_monetary = 'C'\t\t\t# locale for monetary
+        formatting\nlc_numeric = 'C'\t\t\t# locale for number formatting\nlc_time
+        = 'C'\t\t\t\t# locale for time formatting\n\n# default configuration for text
+        search\ndefault_text_search_config = 'pg_catalog.english'\n\n# - Other Defaults
+        -\n\n#dynamic_library_path = '$libdir'\n#local_preload_libraries = ''\n#session_preload_libraries
+        = ''\n\n\n#------------------------------------------------------------------------------\n#
+        LOCK MANAGEMENT\n#------------------------------------------------------------------------------\n\n#deadlock_timeout
+        = 1s\n#max_locks_per_transaction = 64\t\t# min 10\n\t\t\t\t\t# (change requires
+        restart)\n#max_pred_locks_per_transaction = 64\t# min 10\n\t\t\t\t\t# (change
+        requires restart)\n\n\n#------------------------------------------------------------------------------\n#
+        VERSION/PLATFORM COMPATIBILITY\n#------------------------------------------------------------------------------\n\n#
+        - Previous PostgreSQL Versions -\n\n#array_nulls = on\n#backslash_quote =
+        safe_encoding\t# on, off, or safe_encoding\n#default_with_oids = off\n#escape_string_warning
+        = on\n#lo_compat_privileges = off\n#operator_precedence_warning = off\n#quote_all_identifiers
+        = off\n#sql_inheritance = on\n#standard_conforming_strings = on\n#synchronize_seqscans
+        = on\n\n# - Other Platforms and Clients -\n\n#transform_null_equals = off\n\n\n#------------------------------------------------------------------------------\n#
+        ERROR HANDLING\n#------------------------------------------------------------------------------\n\n#exit_on_error
+        = off\t\t\t# terminate session on any error?\n#restart_after_crash = on\t\t#
+        reinitialize after backend crash?\n\n\n#------------------------------------------------------------------------------\n#
+        CONFIG FILE INCLUDES\n#------------------------------------------------------------------------------\n\n#
+        These options allow settings to be loaded from files other than the\n# default
+        postgresql.conf.\n\n#include_dir = 'conf.d'\t\t\t# include files ending in
+        '.conf' from\n\t\t\t\t\t# directory 'conf.d'\n#include_if_exists = 'exists.conf'\t#
+        include file only if it exists\n#include = 'special.conf'\t\t# include file\n\n\n#------------------------------------------------------------------------------\n#
+        CUSTOMIZED OPTIONS\n#------------------------------------------------------------------------------\n\n#
+        Add settings for extensions here\n\n\n"
+    server.crt: |
+        -----BEGIN CERTIFICATE-----
+        MIIEnTCCAoWgAwIBAgIRAO6OSkb2WV6OAWQancHx6LQwDQYJKoZIhvcNAQELBQAw
+        WDELMAkGA1UEBhMCVVMxFDASBgNVBAgTC0tpbmcgQ291bnR5MRAwDgYDVQQHEwdT
+        ZWF0dGxlMRAwDgYDVQQKEwdTYW1zdW5nMQ8wDQYDVQQDEwZSb290Q0EwHhcNMTkw
+        NTIyMTYxNDAwWhcNMjAwNTIyMTYxNDAwWjASMRAwDgYDVQQDEwdmcm9tY3JkMIIB
+        IjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvyeRGXfgmaxsMANqlf82XgYl
+        TnxfFUq5ZUfxETtdZl5bYbinBL2FiFKLeGjoYdndLtN6p/CbrG8UqEAiWcdYnrkR
+        13wsEu+dTUAQGCsa03jHiepZQZLrJIWC0MtGSn3xDElljyQFk7TRZ5s4y5N6uCR2
+        tLIGgXRlvHs9KT1CGNJBVfBPm4njaRrfzIieYKUL2MzY/UxlGaN089cQ1xWFTD0P
+        88DwMbkBKZ4JBk5l/nBr0l75DIxFGwr2hRM80b2/M35Su0+QJCl1hVvxDm5s9rFW
+        IQ84BwjrBV8jT2aR1dFQMGY4VVGfRZ0yRrgyKT90K7ncsTbpKm0y1k0Gl1+DbQID
+        AQABo4GnMIGkMA4GA1UdDwEB/wQEAwIDuDAdBgNVHSUEFjAUBggrBgEFBQcDAQYI
+        KwYBBQUHAwIwHQYDVR0OBBYEFP/UErFZM+qhdHfB6yAFETBvo/YGMB8GA1UdIwQY
+        MBaAFOIjPvEdJJmcHED1mw2Av1K8LinSMDMGA1UdEQQsMCqCB2Zyb21jcmSCD2Zy
+        b21jcmQtcmVwbGljYYIOZnJvbWNyZC1wZ3Bvb2wwDQYJKoZIhvcNAQELBQADggIB
+        AIYLtb8WXHgCoXcraoZ5w4yapuh45m4ilKiPWhnpk47Fgy5cK+kQ2wGtNvUtORI8
+        3035Ib3tOHxV84bon3GByDEEt4LJpB8V3cpXb67ffIVHDg7udX1y/QA9GCMnlFiP
+        7KqScW+y4JTtaYImv8Q02GktAE4oodt9/InCrKrzEvPnc7AF5gH7QiiuSOwve3oQ
+        u5/W/09707vosQis5PZSW4zjZdUSa1G5F0YnzaG/iN+EhJOuquEhslm3mp6CX9TV
+        ykejwNTcSHwjUocQbK787ATQdl8GL7j+2QkyxLlDAcwQtG+mVD+EUtAXPXF3Btim
+        R+nbyalVVmNIgT23kQU/TLvN59EBt6axJPMUYpO3twRPa38IXW00/VYZLzP7wf14
+        ljFsOleqoaT6crk5p0QQ4hF69gSzLVjsAK5ImvecSRMRlWn7VMJhjd70Pvw6+hrF
+        MWMTt/4EjtAUAxoQ0TphEPxnGtubgbnTZG9XSsCZnFHADeGEfwUeqdAuPs3rZbU/
+        pjjT4Pd/Lk0g8XpFl3i1VPFyVJkGgEwluoLHBy8YhuS4OGxXO92voNh9C+q5+nnP
+        7FnmStSetibbI+7ta6zNPkjNAp9q/+cyAuzIjnbuDTM0EBWI8iESl292KqBecsHU
+        /HsSCmdMYj3lqiT3wtBZkJGakgFgDfu9Dq+gmsJA57G/
+        -----END CERTIFICATE-----
+        -----BEGIN CERTIFICATE-----
+        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
+        VgMaCA==
+        -----END CERTIFICATE-----
+    server.key: |
+        -----BEGIN RSA PRIVATE KEY-----
+        MIIEowIBAAKCAQEAvyeRGXfgmaxsMANqlf82XgYlTnxfFUq5ZUfxETtdZl5bYbin
+        BL2FiFKLeGjoYdndLtN6p/CbrG8UqEAiWcdYnrkR13wsEu+dTUAQGCsa03jHiepZ
+        QZLrJIWC0MtGSn3xDElljyQFk7TRZ5s4y5N6uCR2tLIGgXRlvHs9KT1CGNJBVfBP
+        m4njaRrfzIieYKUL2MzY/UxlGaN089cQ1xWFTD0P88DwMbkBKZ4JBk5l/nBr0l75
+        DIxFGwr2hRM80b2/M35Su0+QJCl1hVvxDm5s9rFWIQ84BwjrBV8jT2aR1dFQMGY4
+        VVGfRZ0yRrgyKT90K7ncsTbpKm0y1k0Gl1+DbQIDAQABAoIBAQCgKgbp0Afguxfr
+        IvGrvKtRHNUlbhA9Rt8Qfbb/OT6JB4aJ2q4WyrWYA5HY0g3j7yfklE2xaWkGkgw8
+        7X/aua0HUQoiA2jqdNrYX1Uc6wEPL6QBatpelztu3m89gxTiVaQjJ1xxEz2ZBWhv
+        5x8vc+LfZ64OuRu6XEziIGCerTU0lYL0fn1n/12XaZHYrfuXAeOi4x38JGKRlGkX
+        5wrd0MWt7KZ5lpAicAicMjPFW9lmscm+H+3Cm1JdJApsi1rTWtL3aS030mnb/ujM
+        E1AvML7/+tzcDwOF2ZL8sZry+1QaIsd3IPebCetfp1e8LAeBu3u6jH5P3iJ1Pbj/
+        p86aWxYBAoGBAPIFxBKb9vMTUQHQrLVDZ7U80R0Vnum/syV8X5o/Jw1U0pi5tzSo
+        lbqYCgvnUMH2ozxoGQ8MHB/LwuY8SQaifpXGfbDFZHpG2/3JiDWGU0O/BnIzqdlZ
+        3PO1yQ78QRAU9VVIaLZC15oWWfLZTaebn0EbN4+dhRxXWuV2p0yaJpKfAoGBAMox
+        u4VSiREMp6kpgpqevkImGKvyHAiGvGtOg9UnUVyFzSFqr5R7aX1pUpJYNGWo3kPH
+        d9XZm5wYbSzZsgJsdeIH36Qxl/tkRfx01WQZG9c8xLbEUKKbbq9M4Shxeel8RvAL
+        Tr6o2N8ZGJ8Jvl2VqvPbXHEMGkrxp0VUdG3lKJpzAoGAKfSH7fXtlGvX0im7ltyt
+        gMSfN5yE5N6fjrMF27Zw7aWzsFgZg15qPmOW8kNSQ52e5JzjIzGlOnnXOpRe0HCg
+        4xP6vAcsCOp5voAORcEYdBkMZAXCvvQOEo2D4j4mhUQs13Dq/hWOTJ7tTuUOyix3
+        KhEuy42yApy+HCM6k1Pxtd8CgYAgm36bVKEoL7tGK5yVZO5X6p7l8+iTc28lewcF
+        tA6J9kYLkpH4RyLPB9I6KaFhl6colR19TlerB8FrjzwG6gjkx9JIP3s8HoKu4QSc
+        3PPBdVpgAy7h2mEyQhq5k/tOLS2ffqNXWhGHgRuYYlDh9MYaB5FT5djDp08LfkA8
+        jM1MgwKBgAkCCsg/yIZRwVggS/A36rUHYjPWN/3tuyC1W/hCMQGhc/H19FrJ0Hk5
+        7ReMmyNkdo4djOab/SAft724GW5W/OLNCmpkIcfQlosoQauGxoG9mto8rn50yKpP
+        DuKY5Q2e2ZJmxP50rqOEeTs+ycJwQzxChEyoJzClnUDaDDXb3d+T
+        -----END RSA PRIVATE KEY-----
+kind: ConfigMap
+metadata:
+    name: pgo-custom-ssl-config

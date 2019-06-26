@@ -1,0 +1,6 @@
+certs/*
+configs/ca.crl
+configs/ca.crt
+configs/server.crt
+configs/server.key
+out/*

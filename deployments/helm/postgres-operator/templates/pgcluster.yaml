@@ -1,0 +1,100 @@
+{{- if .Values.pgcluster_creation }}
+{{- range .Values.pgcluster }}
+apiVersion: cr.client-go.k8s.io/v1
+kind: Pgcluster
+metadata:
+  labels:
+    archive: '{{ .labels.archive }}'
+    archive-timeout: '{{ .labels.archive_timeout }}'
+    autofail: '{{ .labels.autofail }}'
+    autofail-replace-replica: '{{ .labels.autofail_replace_replica }}'
+    custom-config: {{ .tls.custom_config }}
+    crunchy-pgbadger: '{{ .labels.crunchy_pgbadger }}'
+    crunchy_collect: '{{ .labels.crunchy_collect }}'
+    crunchy-pgpool: '{{ .labels.crunchy_pgpool }}'
+    current-primary: {{ .name }}
+    custom-config: {{ .labels.custom_config }}
+    deployment-name: {{ .name }}
+    name: {{ .name }}
+    pg-cluster: {{ .name }}
+    pgo-backrest: '{{ .labels.pgo_backrest }}'
+    pgo-version: {{ .labels.pgo_version }}
+    primary: '{{ .labels.primary }}'
+    nodelabelkey: {{ .labels.nodelabelkey }}
+    nodelabelvalue: {{ .labels.nodelabelvalue }}
+  name: {{ .name }}
+  namespace: {{ .namespace }}
+spec:
+  ArchiveStorage:
+    accessmode: ''
+    fsgroup: ''
+    matchLabels: ''
+    name: ''
+    size: ''
+    storageclass: ''
+    storagetype: ''
+    supplementalgroups: ''
+  BackrestStorage:
+    accessmode: ReadWriteOnce
+    fsgroup: ''
+    matchLabels: ''
+    name: ''
+    size: 1G
+    storageclass: ''
+    storagetype: create
+    supplementalgroups: ''
+  ContainerResources:
+    limitscpu: '{{ .spec.ContainerResources.limitscpu }}'
+    limitsmemory: '{{ .spec.ContainerResources.limitsmemory }}'
+    requestscpu: '{{ .spec.ContainerResources.requestscpu }}'
+    requestsmemory: '{{ .spec.ContainerResources.requestsmemory }}'
+  PrimaryStorage:
+    accessmode: {{ .spec.PrimaryStorage.accessmode }}
+    fsgroup: '{{ .spec.PrimaryStorage.fsgroup }}'
+    matchLabels: {{ .spec.PrimaryStorage.matchLabels }}
+    name: {{ .spec.PrimaryStorage.name }}
+    size: {{ .spec.PrimaryStorage.size }}
+    storageclass: {{ .spec.PrimaryStorage.storageclass }}
+    storagetype: {{ .spec.PrimaryStorage.storagetype }}
+    supplementalgroups: {{ .spec.PrimaryStorage.supplementalgroups }}
+  ReplicaStorage:
+    accessmode: {{ .spec.ReplicaStorage.accessmode }}
+    fsgroup: '{{ .spec.ReplicaStorage.fsgroup }}'
+    matchLabels: {{ .spec.ReplicaStorage.matchLabels }}
+    name: {{ .spec.ReplicaStorage.name }}
+    size: {{ .spec.ReplicaStorage.size }}
+    storageclass: {{ .spec.ReplicaStorage.storageclass }}
+    storagetype: {{ .spec.ReplicaStorage.storagetype }}
+    supplementalgroups: {{ .spec.ReplicaStorage.supplementalgroups }}
+  ccpimagetag: {{ .spec.ccpimagetag }}
+  ccpimage: {{ .spec.cppimage }}
+  clustername: {{ .name }}
+  customconfig: {{ .tls.custom_config }}
+  database: userdb
+  name: {{ .name }}
+  nodename: ''
+  policies: ''
+  port: '{{ .spec.port }}'
+  primaryhost: {{ .name }}
+  primarysecretname: {{ .spec.primarysecretname }}
+  replicas: '{{ .spec.replicas }}'
+  rootsecretname: {{ .spec.rootsecretname }}
+  strategy: '{{ .spec.strategy }}'
+  user: testuser
+  userlabels:
+    archive: '{{ .labels.archive }}'
+    archive-timeout: '{{ .labels.archive_timeout }}'
+    autofail: '{{ .labels.autofail }}'
+    autofail-replace-replica: '{{ .labels.autofail_replace_replica }}'
+    crunchy-pgbadger: '{{ .labels.crunchy_pgbadger }}'
+    crunchy_collect: '{{ .labels.crunchy_collect }}'
+    crunchy-pgpool: '{{ .labels.crunchy_pgpool }}'
+    custom-config: {{ .labels.custom_config }}
+    pgo-backrest: '{{ .labels.pgo_backrest }}'
+    pgo-version: {{ .labels.pgo_version }}
+    NodeLabelKey: {{ .labels.nodelabelkey }}
+    NodeLabelValue: {{ .labels.nodelabelvalue }}
+  usersecretname: {{ .spec.usersecretname }}
+---
+{{- end}}
+{{- end}}

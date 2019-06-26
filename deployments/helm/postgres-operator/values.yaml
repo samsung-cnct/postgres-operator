@@ -1,0 +1,117 @@
+# Default values for postgres-operator.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+replicaCount: 1
+
+# required if CRDs already exists
+# install manually is recommendation into cluster first
+# scripts/crd.yaml
+freshInstall:
+  enabled: false
+
+# if providing your own certs, set to false
+apiServer:
+  generated_certs: true
+
+image:
+  repository: crunchydata/postgres-operator
+  tag: centos7-3.5.2
+  pullPolicy: IfNotPresent
+
+env:
+  debug: "true"
+  ccp_image_prefix: "crunchydata"
+  ccp_image_tag: "centos7-11.2-2.3.1"
+  cpp_image: "crunchy-postgres"
+  co_image_prefix: "crunchydata"
+  co_image_tag: "centos7-3.5.2"
+  tls_no_verify: false
+  namespace: stage
+  nodeSelector: { }
+  image_pull_secrets:
+    enabled: false
+    name: harbor
+
+service:
+  type: LoadBalancer
+  port: 8443
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+serviceAccount:
+  name: "postgres-operator"
+  create: "true"
+
+rbac:
+  create: "true"
+
+nameOverride: "pgo"
+
+pgcluster_creation: true
+pgcluster:
+- name: pg-upper
+  tls:
+    enabled: true
+    custom_config: ''
+  namespace: stage
+  labels:
+    archive: true
+    archive_timeout: 600
+    autofail: true
+    autofail_replace_replica: true
+    crunchy_pgbadger: false
+    crunchy_collect: false
+    crunchy_pgpool: true
+    current-primary: pg-upper
+    deployment-name: pg-upper
+    name: pg-upper
+    pg_cluster: pg-upper
+    pgo_backrest: false
+    pgo_version: 3.5.2
+    primary: true
+  spec:
+    ccpimagetag: centos7-11.2-2.3.1
+    cppimage: crunchy-postgres
+    port: 5432
+    primarysecretname: pg-upper-primaryuser-secret
+    replicas: 1
+    rootsecretname: pg-upper-postgres-secret
+    strategy: 1
+    user: testuser
+    usersecretname: pg-upper-testuser-secret
+    ContainerResources:
+      limitscpu: ''
+      limitsmemory: ''
+      requestscpu: ''
+      requestsmemory: ''
+    PrimaryStorage:
+      accessmode: ReadWriteOnce
+      fsgroup: '0'
+      matchLabels: ''
+      name: pg-upper
+      size: 100Gi
+      storageclass: ''
+      storagetype: create
+      supplementalgroups: ''
+    ReplicaStorage:
+      accessmode: ReadWriteOnce
+      fsgroup: '0'
+      matchLabels: ''
+      name: ''
+      size: 100Gi
+      storageclass: ''
+      storagetype: create
+      supplementalgroups: ''
+  secret:
+    primaryuser:
+      password: "T0p4EcRetDta2"
+    postgres:
+      password: "T0p4EcRetDta"
+    testuser:
+      password: "T0p4EcRetDta24"

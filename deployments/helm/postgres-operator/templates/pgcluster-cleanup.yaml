@@ -1,0 +1,29 @@
+{{- if .Values.freshInstall.enabled }}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ template "postgres-operator.fullname" . }}
+  annotations:
+    "helm.sh/hook": pre-delete
+    "helm.sh/hook-weight": "10"
+    "helm.sh/hook-delete-policy": hook-succeeded
+spec:
+  template:
+    metadata:
+      name: {{ template "postgres-operator.fullname" . }}-operator-cleanup
+      labels:
+        app: {{ template "postgres-operator.fullname" . }}-operator
+    spec:
+      serviceAccountName: {{ .Values.serviceAccount.name }}
+      containers:
+        - name: kubectl
+          image: k8s.gcr.io/hyperkube:v1.12.1
+          imagePullPolicy: IfNotPresent
+          command:
+          - /bin/sh
+          - -c
+          - >
+              sleep 10;
+              kubectl delete crd pgclusters.cr.client-go.k8s.io;
+      restartPolicy: OnFailure
+{{ end }}

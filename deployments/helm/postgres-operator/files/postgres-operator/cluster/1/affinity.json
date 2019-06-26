@@ -1,0 +1,19 @@
+        "affinity": {
+            "nodeAffinity": {
+                "requiredDuringSchedulingIgnoredDuringExecution": {
+                    "nodeSelectorTerms": [
+                        {
+                            "matchExpressions": [
+                                {
+                                    "key": "{{.NodeLabelKey}}",
+                                    "operator": "In",
+                                    "values": [
+                                        "{{.NodeLabelValue}}"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },

@@ -1,0 +1,97 @@
+Cluster:
+  PrimaryNodeLabel:  
+  ReplicaNodeLabel:  
+  CCPImagePrefix:  crunchydata
+  CCPImage:  crunchy-postgres
+  Metrics:  false
+  Badger:  false
+  CCPImageTag:  centos7-11.2-2.3.1
+  Port:  5432
+  User:  testuser
+  Database:  userdb
+  PasswordAgeDays:  60
+  PasswordLength:  8
+  Strategy:  1
+  Replicas:  0
+  ArchiveMode:  false
+  ArchiveTimeout:  60
+  ServiceType:  ClusterIP
+  Backrest:  false
+  BackrestPort:  2022
+  Autofail:  true
+  AutofailReplaceReplica:  true
+  LogStatement:  none
+  LogMinDurationStatement:  60000
+PrimaryStorage: nfsstorage
+XlogStorage: nfsstorage
+BackupStorage: nfsstorage
+ReplicaStorage: nfsstorage
+BackrestStorage: nfsstorage
+Storage:
+  hostpathstorage:
+    AccessMode:  ReadWriteOnce
+    Size:  100Gi
+    StorageType:  create
+  replicastorage:
+    AccessMode:  ReadWriteOnce
+    Size:  100Gi
+    StorageType:  create
+    Fsgroup:  0
+  nfsstorage:
+    AccessMode:  ReadWriteOnce
+    Size:  100Gi
+    StorageType:  create
+    Fsgroup:  0
+  backreststorage:
+    AccessMode:  ReadWriteOnce
+    Size:  100Gi
+    StorageType:  create
+    SupplementalGroups:  65534
+  nfsstoragered:
+    AccessMode:  ReadWriteOnce
+    Size:  100Gi
+    MatchLabels: crunchyzone=red
+    StorageType:  create
+    SupplementalGroups:  65534
+  xlogstorage:
+    AccessMode:  ReadWriteOnce
+    Size:  100Gi
+    StorageType:  create
+  storageos:
+    AccessMode:  ReadWriteOnce
+    Size:  100Gi
+    StorageType:  dynamic
+    StorageClass:  fast
+    Fsgroup:  26
+  rook:
+    AccessMode:  ReadWriteOnce
+    Size:  100Gi
+    StorageType:  dynamic
+    StorageClass:  rook-ceph-block
+    Fsgroup:  26
+DefaultContainerResources: 
+DefaultLoadResources:  
+DefaultLspvcResources:  
+DefaultRmdataResources:  
+DefaultBackupResources:  
+DefaultPgbouncerResources:  
+DefaultPgpoolResources:   
+ContainerResources:
+  small:
+    RequestsMemory:  512Mi
+    RequestsCPU:  0.1
+    LimitsMemory:  512Mi
+    LimitsCPU:  0.1
+  large:
+    RequestsMemory:  2Gi
+    RequestsCPU:  2.0
+    LimitsMemory:  2Gi
+    LimitsCPU:  4.0
+Pgo:
+  AutofailSleepSeconds:  9
+  PreferredFailoverNode:  
+  Audit:  false
+  LSPVCTemplate:  /pgo-config/pgo.lspvc-template.json
+  LoadTemplate:  /pgo-config/pgo.load-template.json
+  COImagePrefix:  crunchydata
+  COImageTag:  centos7-3.5.2

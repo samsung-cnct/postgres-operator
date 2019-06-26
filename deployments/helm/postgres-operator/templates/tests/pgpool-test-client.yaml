@@ -1,0 +1,26 @@
+{{- if .Values.pgcluster_creation }}
+{{- if (index .Values.pgcluster 0).labels.crunchy_pgpool }}
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ (index .Values.pgcluster 0).labels.name | trunc 52 }}-pgpool-test"
+  annotations:
+    "helm.sh/hook": test-success
+spec:
+  containers:
+  - name: "{{ (index .Values.pgcluster 0).labels.name | trunc 52 }}-pgpool-test"
+    image: "postgres"
+    imagePullPolicy: "{{ .Values.image.pullPolicy }}"
+    command:
+      - "/usr/bin/pg_isready"
+      - "--dbname"
+      - "postgres"
+      - "--host"
+      - '{{ (index .Values.pgcluster 0).labels.name | trunc 52 }}-pgpool'
+      - "--port"
+      - "{{ (index .Values.pgcluster 0).labels.port }}"
+      - "--username"
+      - "primaryuser"
+  restartPolicy: Never
+{{- end}}
+{{- end}}
